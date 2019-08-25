@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://www.gstatic.com/firebasejs/6.4.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.4.2/firebase-firestore.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>ToDoList</title>
+</head>
+<style>
+    .bold{
+        margin-left: 30px;
+        font-weight: bold;
+        
+        font-family: Arial;
+        padding: 25px;
+    }
+    .expander{
+        padding: 8px;
+        font-size: 20px;
+        margin-left: 20px;
+
+    }
+    .spacer{
+        
+    }
+
+</style>
+<body>
+        <div class="jumbotron" >
+    <form id='todosubmit'>
+        <input type="text" name='title' id='title' placeholder="Title">
+        <input type="text" name='description' id='description' placeholder="Description">
+        <input type="text" name='time' id='time' placeholder="Time">
+        <input class='btn-primary' type="submit">
+
+
+
+    </form>
+    </div>
+
+    <div id='items' class="spacer">
+
+
+        
+
+    </div>
+    <div class="w3-container">
+    <div id="id01" class="w3-modal">
+            <div class="w3-modal-content">
+              <div class="w3-container">
+                <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                <h6>Update Value</h6>
+                <form id="modalval">
+                    <br>
+
+                    <input type="text" name="updateName" placeholder="Title" > <br>
+                    <input type="text" name="updateDescription" placeholder="Description" > <br>
+                    <input type="text" name="updateTime" placeholder="Time" > <br>
+
+                    <input type = "submit">
+                    <p>Please refresh after closing</p>
+                    <br>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+ 
+
+
+<script>
+  
+  var firebaseConfig = {
+    apiKey: "AIzaSyB8wMRTM2q7OVF9NIgsHI300A3j7tZMJ48",
+    authDomain: "todolist-90fcc.firebaseapp.com",
+    databaseURL: "https://todolist-90fcc.firebaseio.com",
+    projectId: "todolist-90fcc",
+    storageBucket: "",
+    messagingSenderId: "616501342731",
+    appId: "1:616501342731:web:1c5c7b6aa318aff5"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+</script>
+
+<script src='appcode.js'></script>
+    
+</body>
+</html>
